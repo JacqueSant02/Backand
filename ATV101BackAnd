@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Java Script</title>
+</head>
+<body>
+    <script>
+       
+      
+       let numero = prompt ("Digite um número")
+      if  (numero % 2 === 0) {
+           alert('Este numero é par.');
+        } else{
+           alert('Este é número impar.')
+        }
+
+    
+</script>
+</body>
+</html>
