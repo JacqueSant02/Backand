@@ -1,0 +1,56 @@
+ <script>
+    const palavras = ["javascript", "programacao", "desenvolvimento", "computador", "tecnologia"];
+
+    
+    function selecionarPalavraAleatoria(palavras) {
+      const indiceAleatorio = Math.floor(Math.random() * palavras.length);
+      return palavras[indiceAleatorio];
+    }
+    
+    
+    function jogarForca() {
+      const palavraSecreta = selecionarPalavraAleatoria(palavras);
+      let palavraAdivinhada = "_".repeat(palavraSecreta.length);
+      let tentativasRestantes = 6;
+      let letrasAdivinhadas = "";
+    
+      console.log("Bem-vindo ao Jogo da Forca!");
+      console.log(`Palavra: ${palavraAdivinhada} (${palavraSecreta.length} letras)`);
+      
+      
+      function processarTentativa(letra) {
+        if (palavraSecreta.includes(letra)) {
+          console.log(`Ótimo! A letra "${letra}" está na palavra.`);
+          letrasAdivinhadas += letra;
+          atualizarPalavraAdivinhada();
+        } else {
+          console.log(`Ops! A letra "${letra}" não está na palavra. Tente novamente.`);
+          tentativasRestantes--;
+          console.log(`Tentativas restantes: ${tentativasRestantes}`);
+        }
+    
+        if (palavraAdivinhada === palavraSecreta) {
+          console.log("Parabéns! Você adivinhou a palavra correta: " + palavraSecreta);
+        } else if (tentativasRestantes > 0) {
+         
+        } else {
+          console.log("Suas tentativas acabaram. A palavra correta era: " + palavraSecreta);
+        }
+      }
+    
+      
+      function atualizarPalavraAdivinhada() {
+        palavraAdivinhada = "";
+        for (let letra of palavraSecreta) {
+          if (letrasAdivinhadas.includes(letra)) {
+            palavraAdivinhada += letra;
+          } else {
+            palavraAdivinhada += "_";
+          }
+        }
+        console.log(`Palavra: ${palavraAdivinhada} (${palavraSecreta.length} letras)`);
+      }
+    
+      
+      processarTentativa('a');
+    }
