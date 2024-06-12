@@ -1,0 +1,6 @@
+
+    <script>
+        function boasVindas(nome) {
+            console.log("Bem-Vindo," + nome +"!");
+        }
+    </script>
